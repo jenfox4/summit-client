@@ -1,4 +1,4 @@
-const apiUrl = require('../apiConfig.js')
+import apiUrl from '../apiConfig.js'
 
 export const handleErrors = res => {
   if (res.ok) {
