@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:4741'
+const apiUrl = require('../apiConfig.js')
 
 export const handleErrors = res => {
   if (res.ok) {
