@@ -38,7 +38,7 @@ Use the following demo credentials
 
 * [Back-end repo]()
 * [Front-end repo]()
-* [Heroku deployment]()
+* [Heroku deployment](https://summit-four-thousand-club.herokuapp.com/)
 * [Front-end deployed]()
 
 ## Built With
