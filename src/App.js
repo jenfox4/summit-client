@@ -10,6 +10,7 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import IndexMountains from './mountains/components/IndexMountains'
 import ShowMountain from './mountains/components/ShowMountain'
+import MyCompletedSummits from './mountains/components/MyCompletedSummits'
 
 class App extends Component {
   constructor () {
@@ -58,6 +59,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/mountains/:id/show' render={(props) => (
             <ShowMountain flash={this.flash} user={user} id={props.match.params.id}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/completed-summits' render={() => (
+            <MyCompletedSummits flash={this.flash} user={user}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/mountains' render={() => (
             <IndexMountains flash={this.flash} user={user}/>
