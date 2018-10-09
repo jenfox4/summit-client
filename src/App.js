@@ -4,13 +4,14 @@ import { Route, Link } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
-import SignUp from './auth/components/SignUp'
-import SignIn from './auth/components/SignIn'
+import SignUp from './auth/components/signup/SignUp'
+import SignIn from './auth/components/signin/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import IndexMountains from './mountains/components/IndexMountains'
 import ShowMountain from './mountains/components/ShowMountain'
 import MyCompletedSummits from './mountains/components/MyCompletedSummits'
+import Home from './home/Home'
 
 class App extends Component {
   constructor () {
@@ -45,6 +46,9 @@ class App extends Component {
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
 
         <main className="body">
+          <Route exact path='/' render={() => (
+            <Home />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp flash={this.flash} setUser={this.setUser} />
           )} />

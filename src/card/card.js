@@ -30,7 +30,7 @@ const styles = theme => ({
     marginRight: -8,
   },
   avatar: {
-    backgroundColor: '#228B22',
+    backgroundColor: '#0275d8',
   },
 })
 

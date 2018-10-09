@@ -4,13 +4,18 @@ $charcoal: #bbb;
   align-items: center;
   border-bottom: 1px solid $charcoal;
   display: flex;
-  height: 100px;
+  height: 50px;
   padding: 0 20px;
+  background: #fefefe;
 
+  h4 {
+    color: #4a4a4a;
+  }
   a,
   span {
     font-size: 1.2em;
     margin: 0 15px;
+    color: #4a4a4a;
   }
 }
 
@@ -23,7 +28,7 @@ $charcoal: #bbb;
 
 .logo {
   height: 100%;
-  width: 20%;
+  width: 15%;
 }
 
 @media (max-width: 600px) {

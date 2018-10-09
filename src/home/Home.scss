@@ -1,0 +1,20 @@
+.hero-image {
+  height: 600px;
+  background-image: url('./homepage2.jpg');
+  background-size: cover;
+}
+
+.heading {
+  text-align: left;
+  padding-left: 100px;
+  padding-top: 100px;
+
+  h1 {
+    font-size: 3.5rem;
+    color: #4a4a4a;
+  }
+  h3 {
+    font-size: 2rem;
+    color: #4a4a4a;
+  }
+}

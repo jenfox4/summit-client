@@ -27,7 +27,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
   <header className="main-header">
-    <img src={require('./logo.png')} className="logo"></img>
+    <h4>Summit</h4>
     <nav>
       { user && <span>Welcome, {user.email}</span>}
       { user ? authenticatedOptions : unauthenticatedOptions }
