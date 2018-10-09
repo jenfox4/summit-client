@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { handleErrors, indexMountains } from '../api'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
+import CardComponent from '../../card/card.js'
 
 class IndexMountains extends Component {
   constructor () {
@@ -13,24 +14,29 @@ class IndexMountains extends Component {
       mountains: null
     }
   }
-  componentDidMount () {
+
+  async componentDidMount () {
     const { user } = this.props
     const mountainArray = []
-
-    indexMountains(user)
-      .then((response)=> {return response.json()})
-      .then((responseJson) => {
-        this.setState({mountains: responseJson.mountains})
-      })
-      .catch(()=> console.error)
+    const response = await indexMountains(user)
+    const json = await response.json()
+    this.setState({mountains: json.mountains})
   }
 
   render () {
     const mountainsList = this.state.mountains && this.state.mountains.map((mountain) =>
-      <h1 key={mountain.id}>{mountain.name}</h1>
+      <CardComponent
+        key={mountain.id}
+        name={mountain.name}
+        state={mountain.state}
+        elevation={mountain.elevation}
+        difficulty={mountain.difficulty}
+        features={mountain.features}
+        summit={false}
+      />
     )
     return (
-      <div>{mountainsList}</div>
+      <div className="container">{mountainsList}</div>
     )
   }
 }
