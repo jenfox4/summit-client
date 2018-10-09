@@ -32,6 +32,7 @@ class IndexMountains extends Component {
         elevation={mountain.elevation}
         difficulty={mountain.difficulty}
         features={mountain.features}
+        image={false}
         summit={false}
       />
     )

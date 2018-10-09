@@ -47,6 +47,10 @@ class  CardComponent extends React.Component {
     this.setState({summitted: !this.state.summitted})
   }
 
+  addDefaultSrc(ev){
+    ev.target.src = require('./mt.jpg')
+  }
+
   render() {
     const { classes } = this.props
 
@@ -63,8 +67,9 @@ class  CardComponent extends React.Component {
         />
         <CardMedia
           component="img"
-          className={classes.media}
-          image={require('./mt.jpg')}
+          className="card-media"
+          onError={this.addDefaultSrc}
+          image={this.props.image? this.props.image : require('./mt.jpg')}
           title={this.props.title}
         />
         <CardContent>
