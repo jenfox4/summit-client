@@ -1,6 +1,6 @@
 {
   "name": "summit-client",
-  "homepage": "https://github.io/jenfox4",
+  "homepage": "https://jenfox4.github.io/summit-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
