@@ -13,6 +13,8 @@ import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-router-dom'
 
+import './Card.scss'
+
 const styles = theme => ({
   card: {
     marginBottom: 20,
@@ -81,7 +83,7 @@ class  CardComponent extends React.Component {
               src={this.state.summitted? require('./summited.png') : require('./notsummited.png')}>
             </img>
           </IconButton>
-          <Link to="/" className="see-more">See Stats</Link>
+          <Link to={`/mountains/${this.props.key}`} className="see-more">See Stats</Link>
         </CardActions>
 
       </Card>
