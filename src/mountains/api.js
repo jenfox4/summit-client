@@ -16,3 +16,12 @@ export const indexMountains = user => {
     },
   })
 }
+
+export const showMountain = (user, id) => {
+  return fetch(apiUrl + `/mountains/${id}`, {
+    method: 'GET',
+    headers: {
+      'Authorization':`Token token=${user.token}`
+    },
+  })
+}

@@ -56,8 +56,8 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/mountains/:id/show' render={() => (
-            <ShowMountain flash={this.flash} user={user}/>
+          <AuthenticatedRoute user={user} exact path='/mountains/:id/show' render={(props) => (
+            <ShowMountain flash={this.flash} user={user} id={props.match.params.id}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/mountains' render={() => (
             <IndexMountains flash={this.flash} user={user}/>
