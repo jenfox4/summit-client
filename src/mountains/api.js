@@ -1,0 +1,18 @@
+import apiUrl from '../apiConfig.js'
+
+export const handleErrors = res => {
+  if (res.ok) {
+    return res
+  } else  {
+    throw new Error('Recieved status in 400 or 500 range.')
+  }
+}
+
+export const indexMountains = user => {
+  return fetch(apiUrl + '/mountains', {
+    method: 'GET',
+    headers: {
+      'Authorization':`Token token=${user.token}`
+    },
+  })
+}
