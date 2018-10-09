@@ -17,7 +17,6 @@ class IndexMountains extends Component {
 
   async componentDidMount () {
     const { user } = this.props
-    const mountainArray = []
     const response = await indexMountains(user)
     const json = await response.json()
     this.setState({mountains: json.mountains})

@@ -25,3 +25,12 @@ export const showMountain = (user, id) => {
     },
   })
 }
+
+export const showCompletedSummits = (user) => {
+  return fetch(apiUrl + '/completed_summits', {
+    method: 'GET',
+    headers: {
+      'Authorization':`Token token=${user.token}`
+    },
+  })
+}

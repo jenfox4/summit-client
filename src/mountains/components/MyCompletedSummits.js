@@ -1,32 +1,44 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { handleErrors, showMountain } from '../api'
+import { handleErrors, showCompletedSummits } from '../api'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
+import CardComponent from '../../card/card.js'
 
-class ShowMountain extends Component {
+class MyCompletedSummits extends Component {
   constructor () {
     super()
 
     this.state = {
-      mountain: false
+      completed: null
     }
   }
 
-  // async componentDidMount () {
-  //   const { user, id } = this.props
-  //   const response = await showMountain(user, id)
-  //   const json = await response.json()
-  //   console.log(json.mountain)
-  //   this.setState({mountain: json.mountain})
-  // }
+  async componentDidMount () {
+    const { user } = this.props
+    const response = await showCompletedSummits(user)
+    const json = await response.json()
+    this.setState({completed: json.completed_summits})
+  }
 
   render () {
+    const completedList = this.state.completed && this.state.completed.map((completed) =>
+      <CardComponent
+        key={completed.id}
+        id={completed.id}
+        name={completed.mountain.name}
+        state={completed.mountain.state}
+        elevation={completed.mountain.elevation}
+        difficulty={completed.mountain.difficulty}
+        features={completed.mountain.features}
+        summit={true}
+      />
+    )
     return (
-      <div>Mountain</div>
+      <div className="container">{completedList}</div>
     )
   }
 }
 
-export default ShowMountain
+export default MyCompletedSummits
