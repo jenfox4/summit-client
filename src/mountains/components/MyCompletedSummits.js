@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { handleErrors, showCompletedSummits } from '../api'
+import { handleErrors, indexCompletedSummits } from '../api'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
 import CardComponent from '../../card/card.js'
@@ -17,7 +17,7 @@ class MyCompletedSummits extends Component {
 
   async componentDidMount () {
     const { user } = this.props
-    const response = await showCompletedSummits(user)
+    const response = await indexCompletedSummits(user)
     const json = await response.json()
     this.setState({completed: json.completed_summits})
   }

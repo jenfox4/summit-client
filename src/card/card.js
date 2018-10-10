@@ -102,7 +102,7 @@ class  CardComponent extends React.Component {
               src={this.state.summitted? require('./summited.png') : require('./notsummited.png')}>
             </img>
           </IconButton>
-          <Link to={`/mountains/${this.state.id}/show`} className="see-more" id={this.state.id}>See Stats</Link>
+          <Link to={this.state.summitted? `/mountains/${this.state.id}/show-completed-summit` : `/mountains/${this.state.id}/show`} className="see-more" id={this.state.id}>See Stats</Link>
         </CardActions>
 
       </Card>
