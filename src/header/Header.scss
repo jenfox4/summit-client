@@ -1,4 +1,4 @@
-$charcoal: #bbb;
+@import '../colors.scss';
 
 .main-header {
   align-items: center;
@@ -6,16 +6,16 @@ $charcoal: #bbb;
   display: flex;
   height: 50px;
   padding: 0 20px;
-  background: #fefefe;
+  background: $white;
 
   h4 {
-    color: #4a4a4a;
+    color: $black;
   }
   a,
   span {
     font-size: 1.2em;
     margin: 0 15px;
-    color: #4a4a4a;
+    color: $black;
   }
 }
 
