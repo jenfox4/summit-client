@@ -34,6 +34,7 @@ class IndexMountains extends Component {
         features={mountain.features}
         image={false}
         summit={false}
+        user= {this.props.user}
       />
     )
     return (

@@ -34,6 +34,7 @@ class MyCompletedSummits extends Component {
         features={completed.mountain.features}
         image={false}
         summit={true}
+        user= {this.props.user}
       />
     )
     return (

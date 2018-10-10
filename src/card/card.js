@@ -12,6 +12,7 @@ import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-router-dom'
+import { handleErrors, deleteCompletedSummit, createCompletedSummit } from './api'
 
 import './Card.scss'
 
@@ -45,6 +46,17 @@ class  CardComponent extends React.Component {
 
   handleSummitClick () {
     this.setState({summitted: !this.state.summitted})
+    if (this.state.summitted) {
+      const id = this.props.id
+      const user = this.props.user
+      deleteCompletedSummit(user, id)
+    } else {
+      const id = this.props.id
+      const user = this.props.user
+      console.log('mountain id', id)
+      console.log('user', user)
+      createCompletedSummit(user, id)
+    }
   }
 
   addDefaultSrc(ev){
