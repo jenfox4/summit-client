@@ -43,3 +43,18 @@ export const indexCompletedSummits = (user) => {
     },
   })
 }
+
+export const editMyNotes = (user, completedSummitId, notes) => {
+  return fetch(apiUrl + '/completed_summits/' + completedSummitId, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization':`Token token=${user.token}`
+    },
+    body: JSON.stringify({
+      completed_summit: {
+        notes: notes
+      }
+    })
+  })
+}

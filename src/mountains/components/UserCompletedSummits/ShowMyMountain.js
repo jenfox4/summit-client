@@ -12,7 +12,6 @@ class ShowMyMountain extends Component {
 
     this.state = {
       completed_summit: false,
-      notes: 'testing'
     }
   }
 
@@ -36,7 +35,7 @@ class ShowMyMountain extends Component {
             <h2>Distance to summit: {this.state.completed_summit.mountain.distance_to_summit}</h2>
             <h2>Features of this hike: {this.state.completed_summit.mountain.features}</h2>
             <h2>My notes on the experience: {this.state.notes}</h2>
-            <MyNotes notes={this.state.notes}/>
+            <MyNotes notes={this.state.completed_summit.notes? this.state.completed_summit.notes : 'Click here to start adding notes about your experience!' } id={this.state.completed_summit.id} user={this.props.user}/>
           </div>
         </div>
       )
