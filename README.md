@@ -12,6 +12,28 @@ Use the following demo credentials
 **Username:** demo@demo
 **Password:** demo
 
+## Installation Guide
+
+### Front End Installation (this repo)
+1. Fork and Clone this repository.
+2. Install dependencies with `npm install`.
+3. Run the development server with npm start.
+
+### Back end Installation (https://github.com/jenfox4/summit-api)
+1. Fork and Clone this repository.
+2. Install dependencies with `bundle install.`
+3. Run the development server with npm start.
+4. Create a .env for sensitive settings (`touch .env`).
+5. Generate new development and test secrets (`bundle exec rails secret`).
+6. Store them in .env with keys `SECRET_KEY_BASE_<DEVELOPMENT|TEST>` respectively.
+7. Set up a Heroku server
+8. Set up your database with the following:
+  - `bin/rails db:drop` (if it already exists)
+  - `bin/rails db:create`
+  - `bin/rails db:migrate`
+  - `bin/rails db:seed` (seeds the mountains csv in lib/seed)
+9. Run the API server with `bin/rails server` or `bundle exec rails server.`
+
 ## Planning Process
 
 Before touching any coding I thought about 3 things: what are my user stories, what are my database needs, and what are the steps to get these things in production.
@@ -96,10 +118,10 @@ After having a clean CSV file of all the mountains in New England, I created a s
 
 ## Links
 
-* [Back-end repo]()
-* [Front-end repo]()
+* [Back-end repo](https://github.com/jenfox4/summit-api)
+* [Front-end repo](https://github.com/jenfox4/summit-client)
 * [Heroku deployment](https://summit-four-thousand-club.herokuapp.com/)
-* [Front-end deployed]()
+* [Front-end deployed](https://jenfox4.github.io/summit-client/)
 *
 
 ## Built With
