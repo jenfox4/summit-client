@@ -1,6 +1,7 @@
 @import '../colors.scss';
 
 .main-header {
+  font-family: 'Quicksand', sans-serif;
   align-items: center;
   border-bottom: 1px solid $charcoal;
   display: flex;
@@ -10,10 +11,12 @@
 
   h4 {
     color: $black;
+    font-weight: 300;
   }
   a,
   span {
     font-size: 1.2em;
+    font-weight: 600;
     margin: 0 15px;
     color: $black;
   }

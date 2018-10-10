@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { handleErrors, showMountain } from '../../api'
 import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
+import '../mountainsinfo.scss'
 
 class ShowMountain extends Component {
   constructor () {
@@ -25,7 +26,7 @@ class ShowMountain extends Component {
   render () {
     if(this.state.mountain) {
       return (
-        <div>
+        <div className="container-mountain-info">
           <h1>{this.state.mountain.name} Mountain</h1>
           <h1>{this.state.mountain.state}</h1>
           <div className="stats">

@@ -6,6 +6,8 @@ import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
 import MyNotes from './MyNotes'
 
+import '../mountainsinfo.scss'
+
 class ShowMyMountain extends Component {
   constructor () {
     super()
@@ -26,7 +28,7 @@ class ShowMyMountain extends Component {
   render () {
     if(this.state.completed_summit) {
       return (
-        <div>
+        <div className="container-mountain-info">
           <h1>{this.state.completed_summit.mountain.name} Mountain</h1>
           <h1>{this.state.completed_summit.mountain.state}</h1>
           <div className="stats">

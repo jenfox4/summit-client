@@ -6,6 +6,7 @@
 }
 
 .sign-in-container {
+  font-family: 'Quicksand', sans-serif;
   background-image: url('./signin3.jpg');
   background-size: cover;
   height: 700px;
@@ -14,6 +15,7 @@
 }
 
 .sign-in-header {
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
