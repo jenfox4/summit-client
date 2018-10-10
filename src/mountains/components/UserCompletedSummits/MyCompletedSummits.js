@@ -6,6 +6,8 @@ import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
 import CardComponent from '../../../card/card.js'
 
+import '../../../index.scss'
+
 class MyCompletedSummits extends Component {
   constructor () {
     super()
@@ -44,9 +46,9 @@ class MyCompletedSummits extends Component {
       )
     } else {
       return (
-        <div>
+        <div className="no-summits">
           <h1> Looks like you have yet to climb the peaks of New England</h1>
-          <h4> Be bold. Go outside. </h4>
+          <h3> Be bold. Go outside. </h3>
         </div>
       )
     }

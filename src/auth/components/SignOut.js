@@ -9,7 +9,6 @@ class SignOut extends Component {
     const { flash, history, clearUser, user } = this.props
 
     signOut(user)
-      .finally(() => flash(messages.signOutSuccess, 'flash-success'))
       .finally(() => history.push('/'))
       .finally(() => clearUser())
   }
