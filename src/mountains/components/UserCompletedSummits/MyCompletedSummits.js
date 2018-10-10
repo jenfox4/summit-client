@@ -23,23 +23,33 @@ class MyCompletedSummits extends Component {
   }
 
   render () {
-    const completedList = this.state.completed && this.state.completed.map((completed) =>
-      <CardComponent
-        key={completed.id}
-        id={completed.id}
-        name={completed.mountain.name}
-        state={completed.mountain.state}
-        elevation={completed.mountain.elevation}
-        difficulty={completed.mountain.difficulty}
-        features={completed.mountain.features}
-        image={false}
-        summit={[true]}
-        user= {this.props.user}
-      />
-    )
-    return (
-      <div className="container">{completedList}</div>
-    )
+    console.log('completed', this.state.completed)
+    if (this.state.completed && this.state.completed.length > 0) {
+      const completedList = this.state.completed.map((completed) =>
+        <CardComponent
+          key={completed.id}
+          id={completed.id}
+          name={completed.mountain.name}
+          state={completed.mountain.state}
+          elevation={completed.mountain.elevation}
+          difficulty={completed.mountain.difficulty}
+          features={completed.mountain.features}
+          image={false}
+          summit={true}
+          user= {this.props.user}
+        />
+      )
+      return (
+        <div className="container">{completedList}</div>
+      )
+    } else {
+      return (
+        <div>
+          <h1> Looks like you have yet to climb the peaks of New England</h1>
+          <h4> Be bold. Go outside. </h4>
+        </div>
+      )
+    }
   }
 }
 
