@@ -39,7 +39,7 @@ class  CardComponent extends React.Component {
   constructor(props) {
     super()
     this.state = {
-      summitted: props.summit,
+      summitted: props.summit[0],
       id: props.id
     }
     this.handleSummitClick = this.handleSummitClick.bind(this)
@@ -66,6 +66,7 @@ class  CardComponent extends React.Component {
   }
 
   render() {
+    console.log(this.props.summit[0])
     const { classes } = this.props
 
     return (
@@ -102,7 +103,7 @@ class  CardComponent extends React.Component {
               src={this.state.summitted? require('./summited.png') : require('./notsummited.png')}>
             </img>
           </IconButton>
-          <Link to={this.state.summitted? `/mountains/${this.state.id}/show-completed-summit` : `/mountains/${this.state.id}/show`} className="see-more" id={this.state.id}>See Stats</Link>
+          <Link to={this.state.summitted===true ? `/mountains/${this.state.id}/show-completed-summit` : `/mountains/${this.state.id}/show`} className="see-more" id={this.state.id}>See Stats</Link>
         </CardActions>
 
       </Card>

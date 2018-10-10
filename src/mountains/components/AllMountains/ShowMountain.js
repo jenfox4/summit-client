@@ -19,7 +19,6 @@ class ShowMountain extends Component {
     const { user, id } = this.props
     const response = await showMountain(user, id)
     const json = await response.json()
-    console.log(json.mountain)
     this.setState({mountain: json.mountain})
   }
 
