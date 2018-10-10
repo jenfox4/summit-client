@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { handleErrors, showMountain } from '../api'
-import messages from '../messages'
-import apiUrl from '../../apiConfig'
+import { handleErrors, showMountain } from '../../api'
+import messages from '../../messages'
+import apiUrl from '../../../apiConfig'
 
 class ShowMountain extends Component {
   constructor () {

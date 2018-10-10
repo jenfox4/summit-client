@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { handleErrors, indexMountains } from '../api'
-import messages from '../messages'
-import apiUrl from '../../apiConfig'
-import CardComponent from '../../card/card.js'
+import { handleErrors, indexMountains } from '../../api'
+import messages from '../../messages'
+import apiUrl from '../../../apiConfig'
+import CardComponent from '../../../card/card.js'
 
 class IndexMountains extends Component {
   constructor () {

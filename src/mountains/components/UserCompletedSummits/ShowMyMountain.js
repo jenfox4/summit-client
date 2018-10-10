@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { handleErrors, showCompletedSummits } from '../api'
-import messages from '../messages'
-import apiUrl from '../../apiConfig'
+import { handleErrors, showCompletedSummits } from '../../api'
+import messages from '../../messages'
+import apiUrl from '../../../apiConfig'
+import MyNotes from './MyNotes'
 
 class ShowMyMountain extends Component {
   constructor () {
@@ -11,6 +12,7 @@ class ShowMyMountain extends Component {
 
     this.state = {
       completed_summit: false,
+      notes: 'testing'
     }
   }
 
@@ -33,7 +35,8 @@ class ShowMyMountain extends Component {
             <h2>Difficulty Level: {this.state.completed_summit.mountain.difficulty}</h2>
             <h2>Distance to summit: {this.state.completed_summit.mountain.distance_to_summit}</h2>
             <h2>Features of this hike: {this.state.completed_summit.mountain.features}</h2>
-            <h2>My notes on the experience: {this.state.completed_summit.notes}</h2>
+            <h2>My notes on the experience: {this.state.notes}</h2>
+            <MyNotes notes={this.state.notes}/>
           </div>
         </div>
       )
