@@ -2,7 +2,29 @@
 
 .container-mountain-info {
   font-family: 'Quicksand', sans-serif;
-  padding: 5%;
   color: $black;
   background: $white;
+  text-align: justify;
+  padding: 2%;
+}
+
+.header-mountain-info {
+  padding-left: 3%;
+  padding-top: 3%;
+}
+
+.stats {
+  padding: 3%
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+
+.my-notes {
+  font-size: 1rem;
+  padding-top: 2%;
 }

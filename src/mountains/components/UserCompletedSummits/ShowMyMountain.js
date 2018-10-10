@@ -29,15 +29,19 @@ class ShowMyMountain extends Component {
     if(this.state.completed_summit) {
       return (
         <div className="container-mountain-info">
-          <h1>{this.state.completed_summit.mountain.name} Mountain</h1>
-          <h1>{this.state.completed_summit.mountain.state}</h1>
+          <div className="header-mountain-info">
+            <h1>{this.state.completed_summit.mountain.name} Mountain</h1>
+            <h2>{this.state.completed_summit.mountain.state}</h2>
+          </div>
           <div className="stats">
-            <h2>Elevation: {this.state.completed_summit.mountain.elevation}</h2>
-            <h2>Difficulty Level: {this.state.completed_summit.mountain.difficulty}</h2>
-            <h2>Distance to summit: {this.state.completed_summit.mountain.distance_to_summit}</h2>
-            <h2>Features of this hike: {this.state.completed_summit.mountain.features}</h2>
-            <h2>My notes on the experience: {this.state.notes}</h2>
-            <MyNotes notes={this.state.completed_summit.notes? this.state.completed_summit.notes : 'Click here to start adding notes about your experience!' } id={this.state.completed_summit.id} user={this.props.user}/>
+            <h3>Elevation: {this.state.completed_summit.mountain.elevation} feet</h3>
+            <h3>Difficulty Level: {this.state.completed_summit.mountain.difficulty}</h3>
+            <h3>Distance to summit: {this.state.completed_summit.mountain.distance_to_summit}</h3>
+            <h3>Features of this hike: {this.state.completed_summit.mountain.features}</h3>
+            <div className="my-notes">
+              <h4>My notes on the experience: {this.state.notes}</h4>
+              <MyNotes notes={this.state.completed_summit.notes? this.state.completed_summit.notes : 'Click here to start adding notes about your experience!' } id={this.state.completed_summit.id} user={this.props.user}/>
+            </div>
           </div>
         </div>
       )
