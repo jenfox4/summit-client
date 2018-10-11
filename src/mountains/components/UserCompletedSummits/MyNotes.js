@@ -22,8 +22,13 @@ class MyNotes extends Component {
   }
 
   async sendEditRequest(user, completedSummitId, notes) {
-    const response = await editMyNotes(user, completedSummitId, notes)
-    console.log(response.json())
+    try {
+      const response = await editMyNotes(user, completedSummitId, notes)
+      console.log(response.json())
+    } catch(e) {
+      const { flash } = this.props
+      flash('Sorry, you cannot edit your notes right now!', 'flash-error')
+    }
   }
 
   render = () => {

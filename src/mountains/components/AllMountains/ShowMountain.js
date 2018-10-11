@@ -17,10 +17,15 @@ class ShowMountain extends Component {
   }
 
   async componentDidMount () {
-    const { user, id } = this.props
-    const response = await showMountain(user, id)
-    const json = await response.json()
-    this.setState({mountain: json.mountain})
+    try {
+      const { user, id } = this.props
+      const response = await showMountain(user, id)
+      const json = await response.json()
+      this.setState({mountain: json.mountain})
+    } catch(e) {
+      const { flash } = this.props
+      flash('We\'\re having trouble displaying the data. Try again soon.', 'flash-error')
+    }
   }
 
   render () {
@@ -44,7 +49,7 @@ class ShowMountain extends Component {
       )
     } else {
       return (
-        <div>Mountain</div>
+        <div>We are retrieving your data. Check back shortly</div>
       )
     }
   }

@@ -19,11 +19,16 @@ class ShowMyMountain extends Component {
   }
 
   async componentDidMount () {
-    const { user, id } = this.props
-    const response = await showCompletedSummits(user, id)
-    const json = await response.json()
-    const completed_summit = json.completed_summit
-    this.setState({completed_summit: completed_summit})
+    try {
+      const { user, id } = this.props
+      const response = await showCompletedSummits(user, id)
+      const json = await response.json()
+      const completed_summit = json.completed_summit
+      this.setState({completed_summit: completed_summit})
+    } catch(e) {
+      const { flash } = this.props
+      flash('We\'\re having trouble displaying the data. Try again soon.', 'flash-error')
+    }
   }
 
   render () {
@@ -41,7 +46,7 @@ class ShowMyMountain extends Component {
             <h3>Features of this hike: {this.state.completed_summit.mountain.features}</h3>
             <div className="my-notes">
               <h4>My notes on the experience: {this.state.notes}</h4>
-              <MyNotes notes={this.state.completed_summit.notes? this.state.completed_summit.notes : 'Click here to start adding notes about your experience!' } id={this.state.completed_summit.id} user={this.props.user}/>
+              <MyNotes flash={this.props.flash} notes={this.state.completed_summit.notes? this.state.completed_summit.notes : 'Click here to start adding notes about your experience!' } id={this.state.completed_summit.id} user={this.props.user}/>
             </div>
           </div>
           <Weather
