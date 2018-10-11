@@ -56,6 +56,10 @@ class Weather extends Component {
       console.log(degreeChange)
       const seaLevelTemperature = hourlyForTwentyFourHours.map(hourly => hourly + degreeChange)
       console.log(seaLevelTemperature)
+      const chanceOfRain = []
+      this.state.forecast.hourly.data.map(hourly =>
+        chanceOfRain.push(hourly.precipProbability))
+      const chanceOfRainTwentyFourHours = chanceOfRain.splice(0, 24)
       return (
         <div className='weather'>
           <h3>Today at the mountain: {this.state.forecast.hourly.summary}</h3>
@@ -64,6 +68,7 @@ class Weather extends Component {
               summitTemp={hourlyForTwentyFourHours}
               sealevelTemp={seaLevelTemperature}
               time={timeForTwentyFour}
+              rain={chanceOfRainTwentyFourHours}
             />
           </div>
         </div>
