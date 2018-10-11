@@ -22,7 +22,7 @@ class Weathergraph extends Component {
 			  			data: props.summitTemp
 			  		},
           {
-            label: 'Percipation',
+            label: 'Precipitation',
             yAxisID: 'B',
             backgroundColor: 'rgb(255,250,205, 0.5)',
             data: props.rain
@@ -41,7 +41,7 @@ class Weathergraph extends Component {
           }, {
             scaleLabel: {
               display: true,
-              labelString: 'change of rain'
+              labelString: 'chance of rain'
             },
             id: 'B',
             type: 'linear',
