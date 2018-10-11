@@ -5,6 +5,7 @@ import { handleErrors, showCompletedSummits } from '../../api'
 import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
 import MyNotes from './MyNotes'
+import Weather from '../Weather'
 
 import '../mountainsinfo.scss'
 
@@ -43,11 +44,14 @@ class ShowMyMountain extends Component {
               <MyNotes notes={this.state.completed_summit.notes? this.state.completed_summit.notes : 'Click here to start adding notes about your experience!' } id={this.state.completed_summit.id} user={this.props.user}/>
             </div>
           </div>
+          <Weather
+            mountain={this.state.completed_summit.mountain}
+          />
         </div>
       )
     } else {
       return (
-        <div>Mountain</div>
+        <div>We are retrieving your data. Check back shortly</div>
       )
     }
   }
