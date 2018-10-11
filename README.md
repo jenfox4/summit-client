@@ -2,7 +2,7 @@
 ## (Capstone Project for General Assembly Web Immersion Program)
 Keep track of the all the New England Mountains that you've climbed with Summit! See stats on each 4,000 footer in New England and mark the ones you've summited!
 
-This app allows users to keep track of all the mountain peaks he/she has reached in New England. The app has a dashboard for user stats to see how close the user is to reaching the 4,000 footer club by AMC.
+This app allows users to keep track of all the mountain peaks he/she has reached in New England. The app has a dashboard for user stats to see how close the user is to reaching the 4,000 footer club by AMC. The app also includes important hiker information such as weather at the summit and base as well as chances of perciptation.
 
 ## Test out the app!
 
@@ -66,12 +66,14 @@ Lastly, I created a to do list of items in order of priority to accomplish all t
 * A user wants to see stats on all the mountains they have climbed.
 
 #### Wireframes
+[Wireframes](planning/)
 I initially started with a pretty basic idea of listing the mountains and keeping a minimal style. I became inspired throughout the project to stick with a minimalist, sleek design using minimal amount of colors and a light and airy font. I created a logo that was simple and modern to fit the theme.
 
+
 #### Entity Relationship Diagrams (ERD)
+[ERD](planning/ERD.png)
 
 ## Development Process
-
 #### Front-End Development
 I started with basic CRUD actions. The most basic CRUD action of all was to index all mountains and index the user's completed summits. Next, I created the mountain info page where user could view states on a single mountain whether that mountain was in their list of the all mountains list. The next step in CRUD was to create and delete the users completed summits. Finally, I worked on the ability for a user to update their notes on a mountain they have summited.
 
@@ -133,6 +135,14 @@ After having a clean CSV file of all the mountains in New England, I created a s
 * [Ruby on Rails]() - Backend Development
 * [Material-UI]()
 * [Google Fonts]()
+* [Google Sheets Webscrapping]()
+* [Chartjs]()
+* [Dark Sky API]()
+* [4,000 Club Data/Images]()
 
-## Authors
-* **Jennifer Fox** - *Front-end Lead* - [Github](https://github.com/jenfox4)
+## Author
+* **Jennifer Fox** - [Portfolio](https://jenfox4.github.io/)
+
+## Acknowledgement
+I could not have set up Dark Sky API without the help of Simon. His the OG of working with this API and getting things to be flawless.
+[Check out his work]()
