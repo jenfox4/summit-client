@@ -30,6 +30,7 @@ class IndexMountains extends Component {
   render () {
     const mountainsList = this.state.mountains && this.state.mountains.map((mountain) =>
       <CardComponent
+        flash={this.props.flash}
         key={mountain.id}
         id={mountain.id}
         name={mountain.name}

@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-router-dom'
 import { handleErrors, deleteCompletedSummit, createCompletedSummit } from './api'
+import messages from '../auth/messages'
 
 import './Card.scss'
 
@@ -37,7 +38,7 @@ const styles = theme => ({
 
 class  CardComponent extends React.Component {
   constructor(props) {
-    super()
+    super(props)
     this.state = {
       summitted: props.summit[0],
       id: props.id
@@ -46,18 +47,23 @@ class  CardComponent extends React.Component {
   }
 
   async handleSummitClick () {
-    this.setState({summitted: !this.state.summitted})
-    if (this.state.summitted) {
-      const id = this.state.id
-      const user = this.props.user
-      deleteCompletedSummit(user, id)
-    } else {
-      const id = this.state.id
-      const user = this.props.user
-      const response = await createCompletedSummit(user, id)
-      const json = await response.json()
-      const newId = json.completed_summit.id
-      this.setState({id: newId})
+    try {
+      this.setState({summitted: !this.state.summitted})
+      if (this.state.summitted) {
+        const id = this.state.id
+        const user = this.props.user
+        const response = await deleteCompletedSummit(user, id)
+      } else {
+        const id = this.state.id
+        const user = this.props.user
+        const response = await createCompletedSummit(user, id)
+        const json = await response.json()
+        const newId = json.completed_summit.id
+        this.setState({id: newId})
+      }
+    } catch(e) {
+      const flash = this.props.flash
+      flash('Sorry, cannot change the status of the hike at this time', 'flash-error')
     }
   }
 

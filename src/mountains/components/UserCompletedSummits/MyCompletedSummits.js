@@ -10,8 +10,8 @@ import CompletedGraph from './completedsummitsgraph'
 import '../../../index.scss'
 
 class MyCompletedSummits extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
       completed: null
@@ -34,6 +34,7 @@ class MyCompletedSummits extends Component {
     if (this.state.completed && this.state.completed.length > 0) {
       const completedList = this.state.completed.map((completed) =>
         <CardComponent
+          flash={this.props.flash}
           key={completed.id}
           id={completed.id}
           name={completed.mountain.name}
