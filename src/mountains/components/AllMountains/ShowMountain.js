@@ -5,6 +5,7 @@ import { handleErrors, showMountain } from '../../api'
 import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
 import '../mountainsinfo.scss'
+import Weather from '../Weather'
 
 class ShowMountain extends Component {
   constructor () {
@@ -36,6 +37,9 @@ class ShowMountain extends Component {
             <h3>Distance to summit: {this.state.mountain.distance_to_summit}</h3>
             <h3>Features of this hike: {this.state.mountain.features}</h3>
           </div>
+          <Weather
+            mountain={this.state.completed_summit.mountain}
+          />
         </div>
       )
     } else {
