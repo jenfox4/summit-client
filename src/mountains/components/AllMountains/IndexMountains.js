@@ -24,6 +24,7 @@ class IndexMountains extends Component {
 
   render () {
     console.log(this.props.user.id)
+    console.log(this.state.mountains)
     const mountainsList = this.state.mountains && this.state.mountains.map((mountain) =>
       <CardComponent
         key={mountain.id}
@@ -33,7 +34,7 @@ class IndexMountains extends Component {
         elevation={mountain.elevation}
         difficulty={mountain.difficulty}
         features={mountain.features}
-        image={false}
+        image={mountain.image}
         summit={mountain.completed_summits.map(completed => completed.user.id === this.props.user.id)}
         user= {this.props.user}
       />
