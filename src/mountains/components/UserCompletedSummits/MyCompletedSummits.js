@@ -30,14 +30,14 @@ class MyCompletedSummits extends Component {
       const completedList = this.state.completed.map((completed) =>
         <CardComponent
           key={completed.id}
-          id={completed.id}
+          id={completed.mountain.id}
           name={completed.mountain.name}
           state={completed.mountain.state}
           elevation={completed.mountain.elevation}
           difficulty={completed.mountain.difficulty}
           features={completed.mountain.features}
           image={false}
-          summit={true}
+          summit={[true]}
           user= {this.props.user}
         />
       )
