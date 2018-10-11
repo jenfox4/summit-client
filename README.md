@@ -4,6 +4,9 @@ Keep track of the all the New England Mountains that you've climbed with Summit!
 
 This app allows users to keep track of all the mountain peaks he/she has reached in New England. The app has a dashboard for user stats to see how close the user is to reaching the 4,000 footer club by AMC. The app also includes important hiker information such as weather at the summit and base as well as chances of precipitation.
 ![Image of App](/SummitApp.png)
+![Image of App](/SummitApp1.png)
+![Image of App](/SummitApp3.png)
+
 ## Test out the app!
 To try out the app for yourself, go to the deployed url:
 
