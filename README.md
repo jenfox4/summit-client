@@ -133,15 +133,15 @@ The other challenge on the back-end was working with the third party API Dark Sk
 * [JavaScript](https://www.javascript.com/) - Programming Language
 * [Ruby on Rails](https://rubyonrails.org/) - Backend Development
 * [Material-UI](https://material-ui.com/) - UI card component
-* [Google Fonts](https://fonts.google.com/)
-* [Google Sheets Webscrapping](https://www.google.com/sheets/about/)
-* [Chartjs](https://www.chartjs.org/)
-* [Dark Sky API](https://darksky.net/dev)
-* [4,000 Club Data/Images](http://4000footers.com/)
+* [Google Fonts](https://fonts.google.com/) - Used for a light and modern font type
+* [Google Sheets Webscrapping](https://www.google.com/sheets/about/) - Webscrapped data for mountains
+* [Chartjs](https://www.chartjs.org/) - Used for Mountain Weather Charts and Accomplished Mountains Chart
+* [Dark Sky API](https://darksky.net/dev) - Used for weather information 
+* [4,000 Club Data/Images](http://4000footers.com/) - Web scrapped data from here. 
 
 ## Author
 * **Jennifer Fox** - [Portfolio](https://jenfox4.github.io/)
 
 ## Acknowledgement
-I could not have set up Dark Sky API without the help of Simon. His the OG of working with this API and getting things to be flawless.
+I could not have set up Dark Sky API without the help of Simon. He is the OG of Dark Sky API setup. Thanks for all your help, Simon!
 [Check out his work](https://git.generalassemb.ly/SimonPringleWallace)
