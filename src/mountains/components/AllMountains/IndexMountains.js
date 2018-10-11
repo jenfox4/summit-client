@@ -16,15 +16,18 @@ class IndexMountains extends Component {
   }
 
   async componentDidMount () {
-    const { user } = this.props
-    const response = await indexMountains(user)
-    const json = await response.json()
-    this.setState({mountains: json.mountains})
+    try {
+      const { user } = this.props
+      const response = await indexMountains(user)
+      const json = await response.json()
+      this.setState({mountains: json.mountains})
+    } catch(e) {
+      const { flash } = this.props
+      flash(messages.indexFail, 'flash-error')
+    }
   }
 
   render () {
-    console.log(this.props.user.id)
-    console.log(this.state.mountains)
     const mountainsList = this.state.mountains && this.state.mountains.map((mountain) =>
       <CardComponent
         key={mountain.id}

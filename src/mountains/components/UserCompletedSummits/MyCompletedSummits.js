@@ -19,14 +19,18 @@ class MyCompletedSummits extends Component {
   }
 
   async componentDidMount () {
-    const { user } = this.props
-    const response = await indexCompletedSummits(user)
-    const json = await response.json()
-    this.setState({completed: json.completed_summits})
+    try {
+      const { user } = this.props
+      const response = await indexCompletedSummits(user)
+      const json = await response.json()
+      this.setState({completed: json.completed_summits})
+    } catch(e) {
+      const { flash } = this.props
+      flash(messages.indexFail, 'flash-error')
+    }
   }
 
   render () {
-    console.log('completed', this.state.completed)
     if (this.state.completed && this.state.completed.length > 0) {
       const completedList = this.state.completed.map((completed) =>
         <CardComponent
