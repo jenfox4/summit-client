@@ -38,7 +38,7 @@ class ShowMountain extends Component {
             <h3>Features of this hike: {this.state.mountain.features}</h3>
           </div>
           <Weather
-            mountain={this.state.completed_summit.mountain}
+            mountain={this.state.mountain}
           />
         </div>
       )
