@@ -1,11 +1,11 @@
 @import '../../colors.scss';
 
 .container-mountain-info {
-  font-family: 'Quicksand', sans-serif;
-  color: $black;
   background: $white;
-  text-align: justify;
+  color: $black;
+  font-family: 'Quicksand', sans-serif;
   padding: 2%;
+  text-align: justify;
 }
 
 .header-mountain-info {
@@ -14,7 +14,7 @@
 }
 
 .stats {
-  padding: 3%
+  padding: 3%;
 }
 
 h1 {

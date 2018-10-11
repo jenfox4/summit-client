@@ -24,7 +24,6 @@ class MyNotes extends Component {
   async sendEditRequest(user, completedSummitId, notes) {
     try {
       const response = await editMyNotes(user, completedSummitId, notes)
-      console.log(response.json())
     } catch(e) {
       const { flash } = this.props
       flash('Sorry, you cannot edit your notes right now!', 'flash-error')
@@ -34,9 +33,9 @@ class MyNotes extends Component {
   render = () => {
     return (
       <ContentEditable
-        html={this.state.html} // innerHTML of the editable div
-        disabled={false} // use true to disable edition
-        onChange={this.handleChange} // handle innerHTML change
+        html={this.state.html}
+        disabled={false}
+        onChange={this.handleChange}
       />
     )
   }

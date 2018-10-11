@@ -1,49 +1,49 @@
 @import '../../../colors.scss';
 
 .list {
-  text-align: left;
   font-size: 18px;
+  text-align: left;
 }
 
 .sign-in-container {
-  font-family: 'Quicksand', sans-serif;
-  background-image: url('./signin3.jpg');
+  background-image: url("./signin3.jpg");
   background-size: cover;
-  height: 700px;
   display: flex;
+  font-family: 'Quicksand', sans-serif;
+  height: 700px;
   justify-content: space-between;
 }
 
 .sign-in-header {
+  margin-left: 6%;
+  flex-direction: column;
   font-weight: 600;
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
-  margin-left: 6%;
-  margin-top: 0%;
+  height: 200px;
+  margin-top: 0;
   color: $white;
   border-radius: 5px;
-  height: 200px;
 }
 
 .auth-form {
+  background-color: rgba(0,0,0,0.4);
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  text-align: left;
+  flex-direction: column;
+  height: 400px;
   margin: 5%;
   max-width: 600px;
   color: $white;
-  background-color: rgba(0,0,0,0.4);
-  height: 400px;
-  width: 30%;
-  padding: 5%;
   border-radius: 15px;
+  padding: 5%;
+  text-align: left;
+  width: 30%;
 
   h3,
   input {
-    margin-bottom: 5%;
     border-radius: 15px;
+    margin-bottom: 5%;
     padding: 1%;
   }
 

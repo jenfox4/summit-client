@@ -17,13 +17,10 @@ class Weather extends Component {
   }
 
   async componentDidMount () {
-    console.log('latitude',this.state.mountain.latitude)
     const latitude = this.state.mountain.latitude
-    console.log('longitude', this.state.mountain.longitude)
     const longitude = this.state.mountain.longitude
     const response = await getWeather(latitude, longitude)
     const json = await response.json()
-    console.log(json)
     this.setState({forecast: json})
   }
 
@@ -46,16 +43,12 @@ class Weather extends Component {
         timeArray.push(hourly.time))
       const timeConvert = timeArray.map(unix => this.unixToHumanReadable(unix))
       const timeForTwentyFour = timeConvert.splice(0,24)
-      console.log(this.state.forecast)
       const hourlyArray = []
       this.state.forecast.hourly.data.map(hourly =>
         hourlyArray.push(hourly.temperature))
       const hourlyForTwentyFourHours = hourlyArray.splice(0, 24)
-      console.log(hourlyForTwentyFourHours)
       const degreeChange = this.calculateDegreeChange(this.state.mountain.elevation)
-      console.log(degreeChange)
       const seaLevelTemperature = hourlyForTwentyFourHours.map(hourly => hourly + degreeChange)
-      console.log(seaLevelTemperature)
       const chanceOfRain = []
       this.state.forecast.hourly.data.map(hourly =>
         chanceOfRain.push(hourly.precipProbability))

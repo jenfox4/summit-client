@@ -13,7 +13,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-router-dom'
 import { handleErrors, deleteCompletedSummit, createCompletedSummit } from './api'
-import messages from '../auth/messages'
+import messages from '../mountains/messages'
 
 import './Card.scss'
 
@@ -63,7 +63,7 @@ class  CardComponent extends React.Component {
       }
     } catch(e) {
       const flash = this.props.flash
-      flash('Sorry, cannot change the status of the hike at this time', 'flash-error')
+      flash(messages.addOrDeleteFail, 'flash-error')
     }
   }
 
@@ -72,7 +72,6 @@ class  CardComponent extends React.Component {
   }
 
   render() {
-    console.log(this.props.summit[0])
     const { classes } = this.props
 
     return (

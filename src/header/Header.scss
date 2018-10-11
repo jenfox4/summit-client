@@ -1,24 +1,25 @@
 @import '../colors.scss';
 
 .main-header {
-  font-family: 'Quicksand', sans-serif;
   align-items: center;
+  background: $white;
   border-bottom: 1px solid $charcoal;
   display: flex;
+  font-family: 'Quicksand', sans-serif;
   height: 50px;
   padding: 0 20px;
-  background: $white;
 
   h4 {
     color: $black;
     font-weight: 300;
   }
+
   a,
   span {
+    color: $black;
     font-size: 1em;
     font-weight: 600;
     margin: 0 15px;
-    color: $black;
   }
 }
 
@@ -37,7 +38,7 @@
 @media (max-width: 600px) {
   .main-header {
     flex-direction: column;
-    font-size: 0.7em;
+    font-size: .7em;
     height: auto;
     padding: 10px;
 
