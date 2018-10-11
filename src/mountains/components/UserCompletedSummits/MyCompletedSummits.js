@@ -5,6 +5,7 @@ import { handleErrors, indexCompletedSummits } from '../../api'
 import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
 import CardComponent from '../../../card/card.js'
+import CompletedGraph from './completedsummitsgraph'
 
 import '../../../index.scss'
 
@@ -42,7 +43,12 @@ class MyCompletedSummits extends Component {
         />
       )
       return (
-        <div className="container">{completedList}</div>
+        <div>
+          <div className="completed-chart">
+            <CompletedGraph numbercompleted={this.state.completed.length} total={68-this.state.completed.length}/>
+          </div>
+          <div className="container">{completedList}</div>
+        </div>
       )
     } else {
       return (
