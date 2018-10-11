@@ -28,28 +28,42 @@ class Weather extends Component {
   }
 
   calculateDegreeChange (summitElevation) {
-    return (summitElevation / 1000) * 4
+    return (summitElevation / 1000) * 3
+  }
+
+  unixToHumanReadable (unix) {
+    const dt = new Date(unix*1000)
+    const hr = dt.getHours()
+    const m = '0' + dt.getMinutes()
+    const s = '0' + dt.getSeconds()
+    return hr+ ':' + m.substr(-2) + ':' + s.substr(-2)
   }
 
   render () {
     if(this.state.forecast) {
+      const timeArray = []
+      this.state.forecast.hourly.data.map(hourly =>
+        timeArray.push(hourly.time))
+      const timeConvert = timeArray.map(unix => this.unixToHumanReadable(unix))
+      const timeForTwentyFour = timeConvert.splice(0,24)
       console.log(this.state.forecast)
       const hourlyArray = []
       this.state.forecast.hourly.data.map(hourly =>
         hourlyArray.push(hourly.temperature))
-      const hourlyForNextFive = hourlyArray.splice(0, 6)
-      console.log(hourlyForNextFive)
+      const hourlyForTwentyFourHours = hourlyArray.splice(0, 24)
+      console.log(hourlyForTwentyFourHours)
       const degreeChange = this.calculateDegreeChange(this.state.mountain.elevation)
       console.log(degreeChange)
-      const seaLevelTemperature = hourlyForNextFive.map(hourly => hourly + degreeChange)
+      const seaLevelTemperature = hourlyForTwentyFourHours.map(hourly => hourly + degreeChange)
       console.log(seaLevelTemperature)
       return (
-        <div className="weather">
+        <div className='weather'>
           <h3>Today at the mountain: {this.state.forecast.hourly.summary}</h3>
-          <div className="graph">
+          <div className='graph'>
             <Weathergraph
-              summitTemp={hourlyForNextFive}
+              summitTemp={hourlyForTwentyFourHours}
               sealevelTemp={seaLevelTemperature}
+              time={timeForTwentyFour}
             />
           </div>
         </div>

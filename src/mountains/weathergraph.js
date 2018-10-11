@@ -7,7 +7,7 @@ class Weathergraph extends Component {
     super()
     this.state = {
       chartData: {
-				 labels: ['Now', 'In One Hour', 'In Two Hours', 'In Three Hours', 'In Four Hours', 'In Five Hours'],
+				 labels: props.time,
 				  datasets: [
 					    {
 			  			label: 'Sea-level Temperature',
@@ -25,7 +25,7 @@ class Weathergraph extends Component {
   }
 
   render() {
-    return <LineChart data={this.state.chartData} width='600' height='250'/>
+    return <LineChart data={this.state.chartData} />
   }
 }
 
