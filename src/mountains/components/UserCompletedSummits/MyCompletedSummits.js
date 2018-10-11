@@ -37,7 +37,7 @@ class MyCompletedSummits extends Component {
           difficulty={completed.mountain.difficulty}
           features={completed.mountain.features}
           image={false}
-          summit={true}
+          summit={[true]}
           user= {this.props.user}
         />
       )

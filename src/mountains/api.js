@@ -58,3 +58,12 @@ export const editMyNotes = (user, completedSummitId, notes) => {
     })
   })
 }
+
+export const getWeather = (lat, long) => {
+  return fetch(apiUrl + `/forecast?lat=${lat}&long=${long}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+}
