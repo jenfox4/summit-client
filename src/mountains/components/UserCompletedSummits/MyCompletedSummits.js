@@ -30,7 +30,7 @@ class MyCompletedSummits extends Component {
       const completedList = this.state.completed.map((completed) =>
         <CardComponent
           key={completed.id}
-          id={completed.mountain.id}
+          id={completed.id}
           name={completed.mountain.name}
           state={completed.mountain.state}
           elevation={completed.mountain.elevation}
