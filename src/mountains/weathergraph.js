@@ -9,24 +9,24 @@ class Weathergraph extends Component {
       chartData: {
 				 labels: props.time,
 				  datasets: [
+          {
+            label: 'Precipitation',
+            yAxisID: 'B',
+            backgroundColor: 'rgb(255,250,205, 0.4)',
+            data: props.rain
+          },
 					    {
 			  			label: 'Sea-level Temperature',
             yAxisID: 'A',
-								 backgroundColor: 'rgb(176,224,230, 0.5)',
+								 backgroundColor: 'rgb(176,224,230, 0.6)',
 			  			data: props.sealevelTemp
 			  		},
 			  		{
 			  			label: 'Summit Temperature',
             yAxisID: 'A',
-							 	backgroundColor: 'rgb(65,105,225,0.5)',
+							 	backgroundColor: 'rgb(65,105,225,0.6)',
 			  			data: props.summitTemp
-			  		},
-          {
-            label: 'Precipitation',
-            yAxisID: 'B',
-            backgroundColor: 'rgb(255,250,205, 0.5)',
-            data: props.rain
-          },]
+			  		}]
       },
       options: {
         scales: {
