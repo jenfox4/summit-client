@@ -46,7 +46,8 @@ Check your schema, controller, and models and if everything checks out go ahead 
 
 Now, that we have the resource, we can see in the information. Under `db/`, create a file called `seeds.rb`. Here we will tell Ruby how to read our .csv and put it into the the database. The code for that is as follows.
 
-`require 'csv'
+```ruby
+require 'csv'
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'mountains.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
@@ -65,8 +66,8 @@ csv.each do |row|
   t.save
   puts "#{t.name} saved"
 end
-puts csv_text`
-
+puts csv_text
+```
 We are simply taking each row header in the csv and assigning it the proper attribute to the resource it creates. I use `puts "#{t.name} saved"` at the bottom just for my own insanity, I can see each mountain printed in the console as it saves. But it's not necessary.
 
 Lastly, we have to run the code. In the terminal, run `bin/rails db:seed`. You'll see all the Mountains printed in the terminal and your database should be complete!
@@ -76,7 +77,9 @@ To check to make sure all your mountains are there, in the terminal run `bin/rai
 
 Remember, this is all still in development. So, we also have to see in Heroku or whatever production database you are using.
 You should already have heroku up and running and pointed at your project. Hopefully you are also already logged into Heroku from the terminal. In that case, you will just need to migrate and seed.
+
 `heroku run rails db:migrate`
+
 `heroku run rails db:seed`
 
-and you are done! 
+and you are done!

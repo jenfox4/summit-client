@@ -5,7 +5,7 @@ Summit lets you keep track of the 4,000 footers you've climbed and the ones you 
 
 As a hiker, I had the inspiration for this app because I wanted a way to see how far I was from joining the 4,000 club by AMC. I wanted a way I could "collect" mountain summits as some people collect other things. Although the AMC 4,000 footer website has a lot of information, it is not always a friendly user experience and lacks the ability to include a user's personal hikes. With no other API's available, I web scrapped all the information off the AMC page and seeded it into my own Ruby/ Ruby on Rails database. Then, I started to create a front end. I wanted the user experience to be sleek and minimalist so I designed my own logo, some of my own icons using Photoshop, and imported a sleek and modern font from google fonts and I used Material-UI components for the google appearance that I find to be user friendly. I decided that in addition to elevation and distance to the summit and level of difficulty of the hike, the biggest thing hikers need is temperature and rain information for the next 24 hours. I used Dark Sky API to obtain hourly weather forecast for the next 24 hours at the summit of each mountain. I used this information and paired it with Chartjs to be able to give users a really friendly experience when viewing the temperature at the summit, at sea level, and chance of rain.
 
-**[To get the details on how I implemented each process, check out the development process below](##development-process)**
+**[To get the details on how I implemented each process, check out the development process below](#development-process)**
 
 ## Test out the app!
 To try out the app for yourself, go to the deployed url:
@@ -76,7 +76,7 @@ Because I focused so heavily on web scraping and collecting data on the back-end
 
 ## Development Process
 
-1. [Web Scrapping from AMC 4,000](how-to-readmes/WEBSCRAPPING.md)
+1. [Web scraping from AMC 4,000](how-to-readmes/WEBscraping.md)
 2. [Custom logos and icons, Google Fonts](how-to-readmes/CUSTOMDESIGN.md)
 4. [Material-UI](how-to-readmes/MATERIALUI.md)
 5. [Dark Sky API](how-to-readmes/DARKSKY.md)
@@ -133,7 +133,7 @@ Because I focused so heavily on web scraping and collecting data on the back-end
 * [Ruby on Rails](https://rubyonrails.org/) - Backend Development
 * [Material-UI](https://material-ui.com/) - UI card component
 * [Google Fonts](https://fonts.google.com/) - Used for a light and modern font type
-* [Google Sheets Webscrapping](https://www.google.com/sheets/about/) - Webscrapped data for mountains
+* [Google Sheets Webscraping](https://www.google.com/sheets/about/) - Webscrapped data for mountains
 * [Chartjs](https://www.chartjs.org/) - Used for Mountain Weather Charts and Accomplished Mountains Chart
 * [Dark Sky API](https://darksky.net/dev) - Used for weather information
 * [4,000 Club Data/Images](http://4000footers.com/) - Web scrapped data from here.
