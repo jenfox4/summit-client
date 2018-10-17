@@ -1,11 +1,11 @@
 # Summit (New England 4,000 Footer Club)
 ## (Capstone Project for General Assembly Web Immersion Program)
-Keep track of the all the New England Mountains that you've climbed with Summit! See stats on each 4,000 footer in New England and mark the ones you've summited!
 
-This app allows users to keep track of all the mountain peaks he/she has reached in New England. The app has a dashboard for user stats to see how close the user is to reaching the 4,000 footer club by AMC. The app also includes important hiker information such as weather at the summit and base as well as chances of precipitation.
-![Image of App](/SummitApp.png)
-![Image of App](/SummitApp1.png)
-![Image of App](/SummitApp3.png)
+Summit lets you keep track of the 4,000 footers you've climbed and the ones you have left to go. It provides information on each Mountain's elevation, distance to summit, difficulty rating, and current weather conditions!
+
+As a hiker, I had the inspiration for this app because I wanted a way to see how far I was from joining the 4,000 club by AMC. I wanted a way I could "collect" mountain summits as some people collect other things. Although the AMC 4,000 footer website has a lot of information, it is not always a friendly user experience and lacks the ability to include a user's personal hikes. With no other API's available, I web scrapped all the information off the AMC page and seeded it into my own Ruby/ Ruby on Rails database. Then, I started to create a front end. I wanted the user experience to be sleek and minimalist so I designed my own logo, some of my own icons using Photoshop, and imported a sleek and modern font from google fonts and I used Material-UI components for the google appearance that I find to be user friendly. I decided that in addition to elevation and distance to the summit and level of difficulty of the hike, the biggest thing hikers need is temperature and rain information for the next 24 hours. I used Dark Sky API to obtain hourly weather forecast for the next 24 hours at the summit of each mountain. I used this information and paired it with Chartjs to be able to give users a really friendly experience when viewing the temperature at the summit, at sea level, and chance of rain.
+
+**[To get the detailed scope on how I implemented each process, check out the development process below](##developmentprocess)**
 
 ## Test out the app!
 To try out the app for yourself, go to the deployed url:
@@ -13,6 +13,11 @@ To try out the app for yourself, go to the deployed url:
 Use the following demo credentials
 **Username:** demo@demo
 **Password:** demo
+
+![Image of App](/SummitApp.png)
+![Image of App](/SummitApp1.png)
+![Image of App](/SummitApp3.png)
+
 
 ## Installation Guide
 ### Front End Installation (this repo)
@@ -70,21 +75,12 @@ I initially started with a pretty basic idea of listing the mountains and keepin
 Because I focused so heavily on web scraping and collecting data on the back-end, I wanted my relationships to be fairly simple. I created users and mountains and created a join table where users can keep track of the mountains they have completed. The serializers are set up so that you can easily view users through mountains and mountains through user. This back-end setup made the front-end easy to navigate.
 
 ## Development Process
-#### Front-End Development
-I started with basic CRUD actions. The most basic CRUD action of all was to index all mountains and index the user's completed summits. Next, I created the mountain info page where user could view states on a single mountain whether that mountain was in their list of the all mountains list. The next step in CRUD was to create and delete the users completed summits. Finally, I worked on the ability for a user to update their notes on a mountain they have summited.
 
-Once basic CRUD actions were down, I really focused heavily on the Front-end design. Specifically, I wanted to improve my understanding of design principles and make a really sleek and inspiring interface that users really love.
-
-In addition, I wanted to practice some data visualization libraries. Thus, I worked with Chartjs to display data of temperature and precipitation of the each mountain as well as using a doughnut chart to display the percentage of the hike complete.
-
-#### Back-end Development
-Because of the linear table-like relationship of the mountains and mountain data, I decided to use a SQL database via Ruby on Rails. After setting up Heroku and the basics of an API, I created the resources mountains and completed_summits. After setting up the resource Model, Controller, Routes, and relationships to each other and the user, I had to begin seeding the data.
-
-In this project, I wanted to have all the New England 4,000 mountain data for users to view and add to their list. However, I struggled to find a CSV or an API that had all the data for the New England Mountains. So, I went to the AMC 4,000 club website and web scraped all the information for each Mountain using some jQuery and google sheets features. Once I had all the data into google sheets, I exported the data into a CSV. However, there were some formatting issues. I decided before I seeded the database that I would clean up the database using some excel features such as find & replace and text to column. I converted all coordinates from degrees to decimal format in anticipation of using Google's API for maps. I made sure there were no odd gaps or punctuation.
-
-After having a clean CSV file of all the mountains in New England, I created a script to seed the data into the database. I then seeded all the mountains into Mountains table. Users can now see a variety of information about each mountain!
-
-The other challenge on the back-end was working with the third party API Dark Sky. In order to access the API, I had to set up an API Key in my .env which required creating a route, a model, and controller for the forecast. There was some difficulty in navigating how to pass in Latitude and Longitude into a get request and work that with my route and controller.
+1. [Web Scrapping from AMC 4,000](how-to-readmes/WEBSCRAPPING.md)
+2. [Custom logos and icons, Google Fonts](how-to-readmes/CUSTOMDESIGN.md)
+4. [Material-UI](how-to-readmes/MATERIALUI.md)
+5. [Dark Sky API](how-to-readmes/DARKSKY.md)
+6. [Chartjs](how-to-readmes/CHARTJS.md)
 
 ##### Catalog of Routes:
 ###### Authentication
@@ -139,8 +135,8 @@ The other challenge on the back-end was working with the third party API Dark Sk
 * [Google Fonts](https://fonts.google.com/) - Used for a light and modern font type
 * [Google Sheets Webscrapping](https://www.google.com/sheets/about/) - Webscrapped data for mountains
 * [Chartjs](https://www.chartjs.org/) - Used for Mountain Weather Charts and Accomplished Mountains Chart
-* [Dark Sky API](https://darksky.net/dev) - Used for weather information 
-* [4,000 Club Data/Images](http://4000footers.com/) - Web scrapped data from here. 
+* [Dark Sky API](https://darksky.net/dev) - Used for weather information
+* [4,000 Club Data/Images](http://4000footers.com/) - Web scrapped data from here.
 
 ## Author
 * **Jennifer Fox** - [Portfolio](https://jenfox4.github.io/)
