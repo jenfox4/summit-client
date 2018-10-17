@@ -76,7 +76,7 @@ Because I focused so heavily on web scraping and collecting data on the back-end
 
 ## Development Process
 
-1. [Web scraping from AMC 4,000](how-to-readmes/WEBscraping.md)
+1. [Web scraping from AMC 4,000](how-to-readmes/WEBSCRAPING.md)
 2. [Custom logos and icons, Google Fonts](how-to-readmes/CUSTOMDESIGN.md)
 4. [Material-UI](how-to-readmes/MATERIALUI.md)
 5. [Dark Sky API](how-to-readmes/DARKSKY.md)
