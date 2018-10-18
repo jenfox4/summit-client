@@ -24,8 +24,20 @@ To make the logo the favicon, I copied the image to the `/public` folder and ren
 
 `<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png">`
 
+# Custom icons
+The original card design from Material-UI included a "favorites" button. I liked the idea of having a button that users could click to add the Mountain to their "favorites" or to their "Summited" list. However, I didn't think any of the Maerial-UI icons really got at the idea of adding a summited mountain to a list. So, I decided to create my own. I used Photoshop in addition to an image I found. When the component renders, it checks to see if the mountain is summited and uses the following code to decide what image to render:
+
+`<img
+    onClick={this.handleSummitClick}
+    alt="mountain"
+    className="summit-button"
+    title={this.state.summitted? 'Click to unmark this mountain as complete' : 'Click to mark this mountain as complete'}
+    src={this.state.summitted? require('./summited.png') : require('./notsummited.png')}>`
+
+On click, the function handleSummitClick will execute which will toggle the src and also send a request to the api to add or delete a summit from the list. 
+
 # Google Fonts
-Google fonts is massive and has so many different styles of fonts. In your `/public/index.html`, make sure you include the link that Google identifies for you. In my case, I wanted a sleek, modern text. I really liked Quicksand, so the link google provided me was `<link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand" rel="stylesheet">`. In my css, I just had to include the font family as follows: `font-family: 'Quicksand', sans-serif;`. 
+Google fonts is massive and has so many different styles of fonts. In your `/public/index.html`, make sure you include the link that Google identifies for you. In my case, I wanted a sleek, modern text. I really liked Quicksand, so the link google provided me was `<link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand" rel="stylesheet">`. In my css, I just had to include the font family as follows: `font-family: 'Quicksand', sans-serif;`.
 
 
 # Color Schemes
