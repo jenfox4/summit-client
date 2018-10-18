@@ -40,7 +40,7 @@ class  CardComponent extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      summitted: props.summit[0],
+      summitted: this.props.summit.includes(true),
       id: props.id
     }
     this.handleSummitClick = this.handleSummitClick.bind(this)
