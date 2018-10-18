@@ -31,8 +31,20 @@
 }
 
 .logo {
-  height: 95%;
-  width: 8%;
+  height: 7%;
+  width: 20%;
+}
+
+.logo-header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  width: 25%;
+}
+
+.logo-header:hover {
+  text-decoration: none;
 }
 
 @media (max-width: 600px) {
