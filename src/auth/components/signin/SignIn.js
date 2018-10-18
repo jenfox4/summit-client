@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { signIn } from '../../api'
 import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
+import Button from '@material-ui/core/Button'
 
 import './signin.scss'
 
@@ -44,7 +45,7 @@ class SignIn extends Component {
           <h1>The Mountains Are Calling</h1>
           <h4>Where will you go today?</h4>
         </div>
-        <form className='auth-form' onSubmit={this.signIn}>
+        <form className='auth-form-sign-in' onSubmit={this.signIn}>
           <h3>Sign In</h3>
           <label htmlFor="email">Email</label>
           <input
@@ -64,7 +65,9 @@ class SignIn extends Component {
             placeholder="Password"
             onChange={this.handleChange}
           />
-          <button type="submit">Sign In</button>
+          <Button variant="contained" type="sumbit" className="button">
+            Sign In
+          </Button>
         </form>
       </div>
     )

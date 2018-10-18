@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { handleErrors, changePassword } from '../api'
-import messages from '../messages'
-import apiUrl from '../../apiConfig'
+import { handleErrors, changePassword } from '../../api'
+import messages from '../../messages'
+import apiUrl from '../../../apiConfig'
+import Button from '@material-ui/core/Button'
+import './changepassword.scss'
 
 class ChangePassword extends Component {
   constructor () {
@@ -36,7 +38,7 @@ class ChangePassword extends Component {
     const { oldPassword, newPassword } = this.state
 
     return (
-      <form className='auth-form' onSubmit={this.changePassword}>
+      <form className='auth-form-change-password' onSubmit={this.changePassword}>
         <h3>Change Password</h3>
 
         <label htmlFor="oldpw">Old Password</label>
@@ -57,7 +59,9 @@ class ChangePassword extends Component {
           placeholder="New Password"
           onChange={this.handleChange}
         />
-        <button type="submit">Change Password</button>
+        <Button variant="contained" type="sumbit" className="button">
+          Change Password
+        </Button>
       </form>
     )
   }

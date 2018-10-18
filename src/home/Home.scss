@@ -6,8 +6,11 @@
 
 .heading {
   font-family: 'Quicksand', sans-serif;
-  padding-left: 100px;
-  padding-top: 100px;
+  display: block;
+  padding: 30px;
+  position: fixed;
+  left: 5%;
+  top: 10%;
   text-align: left;
 
   h1 {
