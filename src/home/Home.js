@@ -1,6 +1,5 @@
 import React from 'react'
 import './Home.scss'
-import MyMapComponent from '../mountains/components/Map/map.js'
 
 class Home extends React.Component {
   render() {
