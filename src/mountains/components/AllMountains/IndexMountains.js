@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { handleErrors, indexMountains } from '../../api'
 import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
-import CardComponent from '../../../card/card.js'
+import CardComponentAllMountains from '../../../card/cardAllMountains.js'
 
 class IndexMountains extends Component {
   constructor () {
@@ -29,7 +29,7 @@ class IndexMountains extends Component {
 
   render () {
     const mountainsList = this.state.mountains && this.state.mountains.map((mountain) =>
-      <CardComponent
+      <CardComponentAllMountains
         flash={this.props.flash}
         key={mountain.id}
         id={mountain.id}
@@ -39,7 +39,7 @@ class IndexMountains extends Component {
         difficulty={mountain.difficulty}
         features={mountain.features}
         image={mountain.image}
-        summit={mountain.completed_summits.map(completed => completed.user.id === this.props.user.id)}
+        summit={mountain.completed_summits}
         user= {this.props.user}
       />
     )

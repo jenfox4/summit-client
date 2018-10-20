@@ -36,11 +36,11 @@ const styles = theme => ({
   },
 })
 
-class  CardComponent extends React.Component {
+class  CardComponentCompletedSummits extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      summitted: this.props.summit.includes(true),
+      summitted: true,
       id: props.id
     }
     this.handleSummitClick = this.handleSummitClick.bind(this)
@@ -73,7 +73,7 @@ class  CardComponent extends React.Component {
 
   render() {
     const { classes } = this.props
-
+    console.log(this.props.summit)
     return (
       <Card className={classes.card}>
         <CardHeader
@@ -108,7 +108,7 @@ class  CardComponent extends React.Component {
               src={this.state.summitted? require('./summited.png') : require('./notsummited.png')}>
             </img>
           </IconButton>
-          <Link to={this.state.summitted===true ? `/mountains/${this.state.id}/show-completed-summit` : `/mountains/${this.state.id}/show`} className="see-more" id={this.state.id} flash={this.props.flash}>See Stats</Link>
+          <Link to={this.state.summitted? `/mountains/${this.state.id}/show-completed-summit` : `/mountains/${this.state.id}/show`} className="see-more" id={this.state.id} flash={this.props.flash}>See Stats</Link>
         </CardActions>
 
       </Card>
@@ -116,8 +116,8 @@ class  CardComponent extends React.Component {
   }
 }
 
-CardComponent.propTypes = {
+CardComponentCompletedSummits.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)( CardComponent)
+export default withStyles(styles)( CardComponentCompletedSummits)

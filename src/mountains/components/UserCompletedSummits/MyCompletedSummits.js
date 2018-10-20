@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { handleErrors, indexCompletedSummits } from '../../api'
 import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
-import CardComponent from '../../../card/card.js'
+import CardComponentCompletedSummits from '../../../card/cardCompletedSummits.js'
 import CompletedGraph from './completedsummitsgraph'
 
 import '../../../index.scss'
@@ -33,7 +33,7 @@ class MyCompletedSummits extends Component {
   render () {
     if (this.state.completed && this.state.completed.length > 0) {
       const completedList = this.state.completed.map((completed) =>
-        <CardComponent
+        <CardComponentCompletedSummits
           flash={this.props.flash}
           key={completed.id}
           id={completed.id}
