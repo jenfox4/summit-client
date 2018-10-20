@@ -73,8 +73,11 @@ class  CardComponentAllMountains extends React.Component {
 
   render() {
     const { classes } = this.props
-    console.log(this.props.summit)
-    console.log(this.props.summit.filter(completed => completed.user.id === this.props.user.id))
+    let summitId = null
+    const summit = (this.state.summitted[0])
+    if (summit !== undefined) {
+      summitId = summit.id
+    }
     return (
       <Card className={classes.card}>
         <CardHeader
@@ -109,7 +112,7 @@ class  CardComponentAllMountains extends React.Component {
               src={this.state.summitted.length > 0 ? require('./summited.png') : require('./notsummited.png')}>
             </img>
           </IconButton>
-          <Link to={this.state.summitted.length > 0 ? `/mountains/${this.state.id}/show-completed-summit` : `/mountains/${this.state.id}/show`} className="see-more" id={this.state.id} flash={this.props.flash}>See Stats</Link>
+          <Link to={this.state.summitted.length > 0 ? `/mountains/${summitId}/show-completed-summit` : `/mountains/${this.state.id}/show`} className="see-more" id={this.state.id} flash={this.props.flash}>See Stats</Link>
         </CardActions>
 
       </Card>
