@@ -19,9 +19,10 @@ class Weather extends Component {
   async componentDidMount () {
     const latitude = this.state.mountain.latitude
     const longitude = this.state.mountain.longitude
-    const response = await getWeather(latitude, longitude)
+    const response = await getWeather(latitude, longitude).catch(console.error)
     const json = await response.json()
-    this.setState({forecast: json})
+      .then(this.setState({forecast: json}))
+      .catch(console.error)
   }
 
   calculateDegreeChange (summitElevation) {
@@ -37,7 +38,8 @@ class Weather extends Component {
   }
 
   render () {
-    if(this.state.forecast) {
+    console.log(this.state.forecast)
+    if(this.state.forecast !== null && this.state.forecast !== undefined) {
       const timeArray = []
       this.state.forecast.hourly.data.map(hourly =>
         timeArray.push(hourly.time))
@@ -68,7 +70,7 @@ class Weather extends Component {
       )
     } else {
       return (
-        <div>Weather section</div>
+        <div>Weather is currently unavailable</div>
       )
     }
   }
