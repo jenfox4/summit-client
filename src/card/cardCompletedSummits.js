@@ -73,7 +73,6 @@ class  CardComponentCompletedSummits extends React.Component {
 
   render() {
     const { classes } = this.props
-    console.log(this.props.summit)
     return (
       <Card className={classes.card}>
         <CardHeader
