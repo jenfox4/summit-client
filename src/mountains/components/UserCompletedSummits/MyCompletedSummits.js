@@ -6,6 +6,7 @@ import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
 import CardComponentCompletedSummits from '../../../card/cardCompletedSummits.js'
 import CompletedGraph from './completedsummitsgraph'
+import Loading from '../../../loadingicon/loading.js'
 
 import '../../../index.scss'
 
@@ -55,12 +56,16 @@ class MyCompletedSummits extends Component {
           <div className="container">{completedList}</div>
         </div>
       )
-    } else {
+    } if(this.state.completed && this.state.completed.length == 0) {
       return (
         <div className="no-summits">
           <h1> Looks like you have yet to climb the peaks of New England</h1>
           <h3> Be bold. Go outside. </h3>
         </div>
+      )
+    } else {
+      return (
+        <Loading />
       )
     }
   }

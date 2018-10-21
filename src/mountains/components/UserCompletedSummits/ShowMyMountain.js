@@ -6,6 +6,7 @@ import messages from '../../messages'
 import apiUrl from '../../../apiConfig'
 import MyNotes from './MyNotes'
 import Weather from '../Weather'
+import Loading from '../../../loadingicon/loading.js'
 
 import '../mountainsinfo.scss'
 
@@ -57,7 +58,7 @@ class ShowMyMountain extends Component {
       )
     } else {
       return (
-        <div>We are retrieving your data. Check back shortly</div>
+        <Loading />
       )
     }
   }

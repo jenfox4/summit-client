@@ -5,6 +5,7 @@ import { handleErrors, getWeather } from '../api'
 import apiUrl from '../../apiConfig'
 import './weather.scss'
 import Weathergraph from '../weathergraph.js'
+import Loading from '../../loadingicon/loading.js'
 
 class Weather extends Component {
   constructor (props) {
@@ -31,7 +32,6 @@ class Weather extends Component {
       const { flash } = this.props
       flash('Weather is currently unavailable.', 'flash-error')
     }
-    console.log(this.state.forecast)
   }
 
   calculateDegreeChange (summitElevation) {
@@ -82,7 +82,7 @@ class Weather extends Component {
       )
     } else {
       return (
-        <div>weather is unavailable</div>
+        <Loading />
       )
     }
   }
