@@ -40,23 +40,23 @@ class  CardComponentAllMountains extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      summittedArray: this.props.summit.filter(completed => completed.user.id === this.props.user.id),
-      summitted: (this.props.summit.filter(completed => completed.user.id === this.props.user.id)).length,
-      id: props.id
+      summitted: this.props.summitted,
+      summitId: this.props.summitId,
+      mountainId: this.props.id
     }
     this.handleSummitClick = this.handleSummitClick.bind(this)
   }
 
   async handleSummitClick () {
     try {
-      if (this.state.summitted === 1) {
-        this.setState({summitted: 0})
-        const id = this.state.id
+      if (this.state.summitted) {
+        this.setState({summitted: false})
+        const id = this.state.summitId
         const user = this.props.user
         const response = await deleteCompletedSummit(user, id)
-      } if (this.state.summitted === 0){
-        this.setState({summitted: 1})
-        const id = this.state.id
+      } else{
+        this.setState({summitted: true})
+        const id = this.state.mountainId
         const user = this.props.user
         const response = await createCompletedSummit(user, id)
         const json = await response.json()
@@ -74,13 +74,8 @@ class  CardComponentAllMountains extends React.Component {
   }
 
   render() {
-    console.log(this.state.summitted)
+    console.log('this.state.summit', this.state.summit)
     const { classes } = this.props
-    let summitId = null
-    const summit = (this.state.summittedArray[0])
-    if (summit !== undefined) {
-      summitId = summit.id
-    }
     return (
       <Card className={classes.card}>
         <CardHeader
@@ -112,10 +107,10 @@ class  CardComponentAllMountains extends React.Component {
               alt="mountain"
               className="summit-button"
               title={this.state.summitted? 'Click to unmark this mountain as complete' : 'Click to mark this mountain as complete'}
-              src={this.state.summitted === 1 ? require('./summited.png') : require('./notsummited.png')}>
+              src={this.state.summitted? require('./summited.png') : require('./notsummited.png')}>
             </img>
           </IconButton>
-          <Link to={this.state.summitted === 1 ? `/mountains/${summitId}/show-completed-summit` : `/mountains/${this.state.id}/show`} className="see-more" id={this.state.id} flash={this.props.flash}>See Stats</Link>
+          <Link to={this.state.summitted? `/mountains/${this.state.summitId}/show-completed-summit` : `/mountains/${this.state.mountainId}/show`} className="see-more" id={this.state.id} flash={this.props.flash}>See Stats</Link>
         </CardActions>
 
       </Card>

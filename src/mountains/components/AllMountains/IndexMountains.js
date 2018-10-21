@@ -44,7 +44,8 @@ class IndexMountains extends Component {
           difficulty={mountain.difficulty}
           features={mountain.features}
           image={mountain.image}
-          summit={mountain.completed_summits}
+          summitted={mountain.completed_summits.filter(completed => completed.user.id === this.props.user.id).length === 1? true : false}
+          summitId={mountain.completed_summits.filter(completed => completed.user.id === this.props.user.id).length === 1? (mountain.completed_summits.filter(completed => completed.user.id === this.props.user.id))[0].id : mountain.id}
           user= {this.props.user}
         />
       )
