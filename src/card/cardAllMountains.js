@@ -61,7 +61,7 @@ class  CardComponentAllMountains extends React.Component {
         const response = await createCompletedSummit(user, id)
         const json = await response.json()
         const newId = json.completed_summit.id
-        this.setState({id: newId})
+        this.setState({summitId: newId})
       }
     } catch(e) {
       const flash = this.props.flash
