@@ -44,6 +44,7 @@ class ShowMountain extends Component {
           </div>
           <Weather
             mountain={this.state.mountain}
+            flash={this.props.flash}
           />
         </div>
       )

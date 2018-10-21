@@ -17,12 +17,21 @@ class Weather extends Component {
   }
 
   async componentDidMount () {
-    const latitude = this.state.mountain.latitude
-    const longitude = this.state.mountain.longitude
-    const response = await getWeather(latitude, longitude).catch(console.error)
-    const json = await response.json()
-      .then(this.setState({forecast: json}))
-      .catch(console.error)
+    try {
+      const latitude = this.state.mountain.latitude
+      const longitude = this.state.mountain.longitude
+      const response = await getWeather(latitude, longitude)
+      const json = await response.json()
+      if (!json.status) {
+        this.setState({forecast: json})
+      } else {
+        this.setState({forecast: 'not available'})
+      }
+    } catch (e) {
+      const { flash } = this.props
+      flash('Weather is currently unavailable.', 'flash-error')
+    }
+    console.log(this.state.forecast)
   }
 
   calculateDegreeChange (summitElevation) {
@@ -38,8 +47,11 @@ class Weather extends Component {
   }
 
   render () {
-    console.log(this.state.forecast)
-    if(this.state.forecast !== null && this.state.forecast !== undefined) {
+    if(this.state.forecast === 'not available') {
+      return (
+        <div>Weather is currently unavailable. Please check your internet connection.</div>
+      )
+    } if (this.state.forecast !== null && this.state.forecast !== undefined) {
       const timeArray = []
       this.state.forecast.hourly.data.map(hourly =>
         timeArray.push(hourly.time))
@@ -70,7 +82,7 @@ class Weather extends Component {
       )
     } else {
       return (
-        <div>Weather is currently unavailable</div>
+        <div>weather is unavailable</div>
       )
     }
   }
