@@ -34,7 +34,7 @@ The original card design from Material-UI included a "favorites" button. I liked
     title={this.state.summitted? 'Click to unmark this mountain as complete' : 'Click to mark this mountain as complete'}
     src={this.state.summitted? require('./summited.png') : require('./notsummited.png')}>`
 
-On click, the function handleSummitClick will execute which will toggle the src and also send a request to the api to add or delete a summit from the list. 
+On click, the function handleSummitClick will execute which will toggle the src and also send a request to the api to add or delete a summit from the list.
 
 # Google Fonts
 Google fonts is massive and has so many different styles of fonts. In your `/public/index.html`, make sure you include the link that Google identifies for you. In my case, I wanted a sleek, modern text. I really liked Quicksand, so the link google provided me was `<link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand" rel="stylesheet">`. In my css, I just had to include the font family as follows: `font-family: 'Quicksand', sans-serif;`.
@@ -68,3 +68,7 @@ For the stock images on the landing page, I used [Pexels](https://www.pexels.com
 ```
 
 The reason I made the image a background is so that I could overlay text and auth forms easily.
+
+# Custom Error Handling
+I was inspired by UI/UX designers who create cute error handling messages. So I thought of something I could do along the lines of camping and hiking. I found images from [Dreamtime](https://www.dreamstime.com/) of a extinguished campfire and a bonfire and thought it would be a nice touch to make the extinguished fire as part of the error message and the bonfire as part of the success message.
+![Error Handling](/fail-success-ui.jpg)
